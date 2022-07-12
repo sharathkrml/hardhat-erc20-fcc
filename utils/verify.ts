@@ -8,7 +8,7 @@ const verify = async (contractAddress: string, args: any[]) => {
         await run("verify:verify", {
             address: contractAddress,
             constructorArguments: args,
-            contract: "contracts/OurToken.sol:OurToken",
+            contract: "contracts/OurToken.sol:OurToken", // added due to same bytecode error
         })
     } catch (e: any) {
         if (e.message.toLowerCase().includes("already verified")) {
